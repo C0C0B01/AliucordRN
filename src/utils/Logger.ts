@@ -17,32 +17,32 @@ export class Logger extends DiscordLogger {
 
         this.log = (...messages: any[]) => {
             log(...messages);
-            this._log(console.log, messages);
+            this._log(messages);
         };
 
         this.info = (...messages: any[]) => {
             info(...messages);
-            this._log(console.info, messages);
+            this._log(messages);
         };
 
         this.warn = (...messages: any[]) => {
             warn(...messages);
-            this._log(console.warn, messages);
+            this._log(messages);
         };
 
         this.error = (...messages: any[]) => {
             error(...messages);
-            this._log(console.error, messages);
+            this._log(messages);
         };
 
         this.trace = (...messages: any[]) => {
             trace(...messages);
-            this._log(console.trace, messages);
+            this._log(messages);
         };
 
         this.verbose = (...messages: any[]) => {
             verbose(...messages);
-            this._log(console.debug, messages);
+            this._log(messages);
         };
     }
 
