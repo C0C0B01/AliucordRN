@@ -30,14 +30,6 @@ export default class NoTrack extends Plugin {
             Sentry.main.getStackTop().scope.clear();
             Sentry.main.getScope().clear();
             insteadDoNothing(Sentry.main, "addBreadcrumb");
-
-            const c = console as any;
-            for (const method in c) {
-                if (c[method].__sentry_original__)
-                    c[method] = c[method].__sentry_original__;
-                if (c[method].__REACT_DEVTOOLS_ORIGINAL_METHOD__?.__sentry_original__)
-                    c[method].__REACT_DEVTOOLS_ORIGINAL_METHOD__ = c[method].__REACT_DEVTOOLS_ORIGINAL_METHOD__.__sentry_original__;
-            }
         }
     }
 }
